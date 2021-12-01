@@ -15,6 +15,7 @@ import {
     WorkOutline,
     Report,
 } from '@material-ui/icons';
+import { Link } from 'react-router-dom';
 export default function SideBar() {
     return (
         <div className="sidebar">
@@ -22,10 +23,12 @@ export default function SideBar() {
                 <div className="sidebarMenu">
                     <h3 className="sidebarTitle">Dashboard</h3>
                     <ul className="sidebarList">
-                        <li className="sidebarListItem active">
-                            <LineStyleIcon className="sidebarIcon" />
-                            Home
-                        </li>
+                        <Link to="/" className="link">
+                            <li className="sidebarListItem active">
+                                <LineStyleIcon className="sidebarIcon" />
+                                Home
+                            </li>
+                        </Link>
                         <li className="sidebarListItem">
                             <TimelineIcon className="sidebarIcon" />
                             Analatics
@@ -40,14 +43,18 @@ export default function SideBar() {
                 <div className="sidebarMenu">
                     <h3 className="sidebarTitle">Quik Menu</h3>
                     <ul className="sidebarList">
-                        <li className="sidebarListItem">
-                            <PermIdentity className="sidebarIcon" />
-                            Users
-                        </li>
-                        <li className="sidebarListItem">
-                            <Storefront className="sidebarIcon" />
-                            Products
-                        </li>
+                        <Link to="/users" className="link" >
+                            <li className="sidebarListItem">
+                                <PermIdentity className="sidebarIcon" />
+                                Users
+                            </li>
+                        </Link>
+                        <Link to="/products" className="link" >
+                            <li className="sidebarListItem">
+                                <Storefront className="sidebarIcon" />
+                                Products
+                            </li>
+                        </Link>
                         <li className="sidebarListItem">
                             <AttachMoney className="sidebarIcon" />
                             Transactions
@@ -73,7 +80,7 @@ export default function SideBar() {
                         </li>
                         <li className="sidebarListItem ">
                             <ChatBubbleOutline className="sidebarIcon" />
-                        Messages
+                            Messages
                         </li>
                     </ul>
                 </div>
